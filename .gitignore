@@ -27,4 +27,6 @@
 /config/master.key
 
 # i dont want to show my secrets
+/config/master.key
+/config/credentials.yml.enc
 /config/secrets.yml
