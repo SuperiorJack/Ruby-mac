@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /blogs
   # GET /blogs.json
@@ -19,6 +19,17 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
+  end
+
+  def toggle_status
+    respond_to do |format|
+      if @blog.published?
+        @blog.draft!
+      elsif @blog.draft?
+        @blog.published!
+      end
+      format.html { redirect_to blogs_path, notice: 'Blog status has been switched' }
+    end
   end
 
   # POST /blogs
