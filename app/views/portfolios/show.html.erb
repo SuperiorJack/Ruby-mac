@@ -3,3 +3,7 @@
 <em><%= @portfolio_item.subtitle %></em>
 <p><%= @portfolio_item.body %></p>
 <%= link_to "back", portfolios_path %>
+<h2>Technologies used</h2>
+<% @portfolio_item.technologies.each do |t| %>
+  <p><%= t.name %></p>
+<% end %>
