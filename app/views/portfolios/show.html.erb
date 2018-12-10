@@ -7,3 +7,6 @@
 <% @portfolio_item.technologies.each do |t| %>
   <p><%= t.name %></p>
 <% end %>
+<hr>
+<%#= Portfolio.find(params[:id]).technologies[1].name %>
+<%= session.inspect %>
