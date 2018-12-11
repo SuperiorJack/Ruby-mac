@@ -1,5 +1,6 @@
   <p><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %></p>
   <p><%= portfolio_item.subtitle %></p>
+  <td>Published <%= distance_of_time_in_words(portfolio_item.created_at, Time.now) %></td>
   <p><%= portfolio_item.body %></p>
   <%= image_tag portfolio_item.thumb_image unless portfolio_item.thumb_image.nil? %>
   <%= link_to "Edit", edit_portfolio_path(portfolio_item.id) %>
